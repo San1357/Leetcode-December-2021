@@ -26,3 +26,22 @@ class Solution:
       if x_value in hashmap and hashmap[x_value] != i:  #O(1)
         return [i, hashmap[x_value]]   
                    
+
+        #or
+        
+        
+#Code  : #same logic but one hashmap used without iteration
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap =  {}
+        for i in range(len(nums)):
+            x_value = target - nums[i]
+            if x_value in hashmap:
+                return [i,hashmap[x_value]]
+            hashmap[nums[i]] = i
+            
+            
+            #time : O(n)
+            #space : O(n)
+        
